@@ -1,0 +1,11 @@
+logging:
+  level:
+    org-springframework: debug
+
+
+spring:
+  message:
+    basename: messages
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
