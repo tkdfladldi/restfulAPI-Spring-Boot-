@@ -9,16 +9,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 
-@RestController
+@Controller
 public class LoginController {
 
+	@GetMapping("/home")
+    public String home(HttpServletRequest request){
+        return "home";
+    }
+	
 	@GetMapping("/login")
     public String login(HttpServletRequest request){
-
-		request.getSession().setAttribute("member", "ok");
-		
-		System.out.println("ok");
-        return "null";
+        return "login";
     }
 	
 	@GetMapping("/loginOut")

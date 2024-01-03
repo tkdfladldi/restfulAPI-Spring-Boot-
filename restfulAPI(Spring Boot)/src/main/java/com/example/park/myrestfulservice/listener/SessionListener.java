@@ -1,6 +1,7 @@
 package com.example.park.myrestfulservice.listener;
 
 import java.util.Map;
+
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -11,9 +12,11 @@ import javax.servlet.http.HttpSessionListener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import com.example.park.myrestfulservice.model.AdminUser;
 
+@Component(value =  "sessionListener")
 @WebListener 
 public class SessionListener implements HttpSessionListener {
 	private final Logger logger = LoggerFactory.getLogger(SessionListener.class);
@@ -28,6 +31,7 @@ public class SessionListener implements HttpSessionListener {
 		HttpSession session = se.getSession();
 	
 		sessions.put(session.getId(), session);
+		
 	}
 
 	@Override
